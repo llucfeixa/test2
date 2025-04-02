@@ -1,0 +1,27 @@
+name: Build Library
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-library:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository_owner }}/unex-toolchain:latest  # Use the toolchain
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Library
+        run: |
+          cd src/
+          make
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-libraries
+          path: src/*.so

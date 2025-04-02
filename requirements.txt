@@ -1,0 +1,2 @@
+--index-url https://package:glpat-5M4bDbLhiuu2Hiz4Tsgz@gitlab.i2cat.net/api/v4/projects/1440/packages/pypi/simple
+v2xreferencekit==0.0.7
