@@ -148,7 +148,7 @@ static data_t recv(int caster_id)
     }
 
     printf("-----------------------\n");
-    ret = eu_caster_rx_timeout(rx_handler, &rx_info, rx_buf, sizeof(rx_buf), &rx_data_len, 10);
+    ret = eu_caster_rx_timeout(rx_handler, &rx_info, rx_buf, sizeof(rx_buf), &rx_data_len, 1000);
     if (IS_SUCCESS(ret))
     {
         printf("Received %zu bytes!\n", rx_data_len);
